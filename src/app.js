@@ -1,6 +1,8 @@
 import React from 'react';
 import posts from '../data/posts';
 
+import { connect } from 'react-redux';
+
 import './main.scss';
 import Image from './components/Image';
 
@@ -11,12 +13,23 @@ class App extends React.Component {
 	render() {
 		return (
 			<main>
-				<h1>here</h1>
+				<h1>Images</h1>
 				<div className="images">
-					{posts.map((elem, index) => <Image imgSrc={elem.display_src} caption={elem.caption} />)}
+					{posts.map((elem, index) => <Image key={index} imgSrc={elem.display_src} caption={elem.caption} />)}
 				</div>
 			</main>
 		);
 	}
 }
-export default App;
+
+const mapStateToProps = (state) => {
+
+}
+
+
+const mapDispatchToProps = () => {
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default App;
