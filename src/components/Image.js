@@ -2,8 +2,7 @@ import React from 'react';
 
 const Image = ({ imgSrc, caption }) => {
 	return (
-		<div className="image">
-			{console.log(caption)}
+		<div className="imageContainer">
 			<img src={imgSrc} />
 			<p>{caption}</p>
 		</div>
