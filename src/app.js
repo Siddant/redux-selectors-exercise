@@ -2,13 +2,18 @@ import React from 'react';
 import posts from '../data/posts';
 
 import { connect } from 'react-redux';
-
+import { selectUsers, selectUsersId } from './selectors/index'
 import './main.scss';
 import Image from './components/Image';
 
 class App extends React.Component {
 	constructor() {
 		super();
+	}
+	componentDidMount() {
+		console.log(this.props.selectUsersId)
+
+
 	}
 	render() {
 		return (
@@ -23,13 +28,18 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-
+	return {
+		comments: state.comments,
+		posts: state.posts,
+		selectUsers: selectUsers(state),
+		selectUsersId: selectUsersId(state),
+	}
 }
 
 
-const mapDispatchToProps = () => {
+// const mapDispatchToProps = () => {
 
-};
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, null)(App);
 // export default App;

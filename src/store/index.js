@@ -8,6 +8,8 @@ const enhancers = compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
 );
 
-const store = createStore(rootReducer, { comments, posts }, enhancers);
+const store = createStore(rootReducer, {
+    comments, posts, selectedId: 'BAcyDyQwcXX'
+}, enhancers);
 
 export default store;
